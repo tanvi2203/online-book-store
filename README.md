@@ -1,184 +1,187 @@
 # Online Book Store
 
-A beginner-friendly full-stack online bookstore built with:
+This is a simple Online Book Store project made as a full-stack web application.
 
-- React.js
-- Flask
-- MySQL
-- HTML/CSS/JavaScript
+The project allows users to view books, search for books, add books to a cart, place orders, and check their previous orders.
 
-No Node.js backend, Express.js, MongoDB or JWT is used.
+There is also an admin section where the admin can manage books and orders.
 
-## Features
+## Technologies Used
 
-### Customer
-- Register
-- Login/logout
-- Browse books
-- Search books
-- Filter by category
-- View book details
-- Add to cart
-- Update cart
-- Remove from cart
-- Checkout
-- Place orders
-- View order history
-- View order details
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+* React.js
+
+### Backend
+
+* Python
+* Flask
+
+### Database
+
+* MySQL
+
+## Main Features
+
+### User
+
+* Register
+* Login and Logout
+* View books
+* Search books
+* View book details
+* Add books to cart
+* Update cart quantity
+* Remove books from cart
+* Place orders
+* View orders
+* View order details
 
 ### Admin
-- Admin login
-- Admin dashboard
-- Add books
-- Delete books
-- View orders
-- Change order status
 
-## 1. Install requirements
+* Admin login
+* View dashboard
+* Add books
+* Delete books
+* View all orders
+* Update order status
+* View users
 
-You need:
+## Project Structure
 
-- Python 3
-- MySQL Server
-- Node.js and npm
+```text
+online-book-store
+│
+├── backend
+│   ├── app.py
+│   ├── database.py
+│   ├── config.py
+│   └── requirements.txt
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   ├── package.json
+│   └── vite.config.js
+│
+├── database
+│   └── bookstore.sql
+│
+└── README.md
+```
 
-## 2. Backend setup
+## How to Run the Project
 
-Open a terminal:
+### 1. Start MySQL
+
+Make sure MySQL is installed and running on your computer.
+
+### 2. Run the Backend
+
+Open the terminal in VS Code:
 
 ```bash
 cd backend
+```
+
+Create a virtual environment:
+
+```bash
 python -m venv venv
-venv\Scripts\activate
+```
+
+Activate it on Windows:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+Install the required packages:
+
+```bash
 pip install -r requirements.txt
 ```
 
-On macOS/Linux, activate with:
-
-```bash
-source venv/bin/activate
-```
-
-## 3. MySQL setup
-
-Make sure MySQL Server is running.
-
-The Flask application creates the `bookstore` database and tables automatically when it starts.
-
-If you prefer to create the tables manually, run:
-
-```text
-database/bookstore.sql
-```
-
-## 4. Configure MySQL
-
-The backend uses these default settings:
-
-```text
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=
-DB_NAME=bookstore
-```
-
-If your MySQL root password is not empty, set it before starting Flask.
-
-Windows Command Prompt:
-
-```bash
-set DB_PASSWORD=your_mysql_password
-```
-
-PowerShell:
-
-```powershell
-$env:DB_PASSWORD="your_mysql_password"
-```
-
-You can also set:
-
-```text
-DB_HOST
-DB_USER
-DB_PASSWORD
-DB_NAME
-SECRET_KEY
-ADMIN_EMAIL
-ADMIN_PASSWORD
-```
-
-## 5. Start Flask
-
-From the backend folder:
+Run the Flask server:
 
 ```bash
 python app.py
 ```
 
-Backend:
+The backend will run on:
 
 ```text
 http://localhost:5000
 ```
 
-The application automatically creates sample books and a default admin.
+### 3. Run the Frontend
 
-Default admin:
+Open another terminal:
+
+```bash
+cd frontend
+```
+
+Install the packages:
+
+```bash
+npm install
+```
+
+Start the React application:
+
+```bash
+npm run dev
+```
+
+The frontend will run on:
+
+```text
+http://localhost:5173
+```
+
+## Admin Login
+
+For testing the admin section:
 
 ```text
 Email: admin@bookstore.com
 Password: admin123
 ```
 
-Change these values for anything beyond a local student demo.
+The password can be changed later.
 
-## 6. Start React
+## Database
 
-Open another terminal:
+The project uses MySQL.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+The database and required tables are created when the backend starts.
 
-Open the Vite URL shown in the terminal, normally:
+The SQL file is also available in:
 
 ```text
-http://localhost:5173
+database/bookstore.sql
 ```
 
-## 7. Project flow
+## Note
 
-```text
-React
-  |
-  | HTTP /api requests
-  v
-Flask
-  |
-  | SQL queries
-  v
-MySQL
-```
+This is a student project created for learning full-stack web development.
 
-## Notes
+It is a basic online book store and does not include a real payment gateway.
 
-This is an educational project. The checkout does not process real payments.
+## Learning
 
-For a production application, add stronger security controls, HTTPS, CSRF protection, stricter validation, secure production session configuration, database migrations, proper secret management, logging, testing, and a real payment provider.
+This project helped me understand:
 
-## Official documentation
-
-Flask:
-https://flask.palletsprojects.com/
-
-React:
-https://react.dev/
-
-MySQL:
-https://dev.mysql.com/doc/
-
-Vite:
-https://vite.dev/
+* React.js
+* Flask
+* MySQL
+* REST APIs
+* Frontend and backend communication
+* Database operations
+* User login and sessions
+* Shopping cart
+* Order management
